@@ -10,3 +10,6 @@ import npm from './assets/npm.png';
 import python from './assets/python.png';
 import sass from './assets/sass.png';
 import django from './assets/django.png';
+import battleship from './assets/battleship.PNG';
+import weather from './assets/weather.PNG';
+import ageCalulator from './assets/ageCalulator.PNG';
