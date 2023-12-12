@@ -31,6 +31,50 @@ ___CSS_LOADER_EXPORT___.push([module.id, `* {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+#logo {
+  font-size: 1.8rem;
+  font-family: "Whisper", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  padding: 0px 8px;
+}
+
+#logo:hover {
+  transform: scale(1.1);
+}
+
+#logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 0;
+  width: 1px;
+  background-color: #FEE715;
+  transition: 0.3s ease-in-out;
+}
+
+#logo:hover::before {
+  height: 100%;
+}
+
+#logo::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 1px;
+  background-color: #FEE715;
+  transition: 0.3s ease-in-out;
+}
+
+#logo:hover::after {
+  height: 100%;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -42,44 +86,6 @@ header {
   position: fixed;
   width: 100%;
   z-index: 10;
-}
-header h1 {
-  font-size: 1.8rem;
-  font-family: "Whisper", sans-serif;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  position: relative;
-  padding: 0px 8px;
-}
-header h1:hover {
-  transform: scale(1.1);
-}
-header h1::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 0;
-  width: 1px;
-  background-color: #FEE715;
-  transition: 0.3s ease-in-out;
-}
-header h1:hover::before {
-  height: 100%;
-}
-header h1::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 0;
-  width: 1px;
-  background-color: #FEE715;
-  transition: 0.3s ease-in-out;
-}
-header h1:hover::after {
-  height: 100%;
 }
 header .menu-container {
   display: flex;
@@ -206,12 +212,97 @@ header .menu-container li a {
 
 #my-work {
   background-color: rgb(228, 228, 228);
-  padding: 3rem 4rem;
+  padding: 4rem 3rem 6rem 3rem;
 }
 #my-work h2 {
   font-size: 2.5rem;
   letter-spacing: 1px;
   font-weight: 500;
+  margin-bottom: 5rem;
+}
+#my-work .projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.project {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  border: 1px solid rgb(116, 116, 116);
+  border-radius: 10px;
+  gap: 3rem;
+}
+.project img {
+  border-radius: 16px;
+}
+.project .summary {
+  display: flex;
+  flex-direction: column;
+}
+.project .summary h4 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  padding: 1rem 0rem;
+}
+.project .summary p {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  color: rgb(70, 70, 70);
+}
+.project .summary .buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+.project .summary .buttons a {
+  color: rgb(70, 70, 70);
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  border: 1px solid rgb(70, 70, 70);
+  border-radius: 10px;
+  transition: 0.3s ease-in-out;
+}
+.project .summary .buttons a:hover {
+  background-color: #101820;
+  color: #fff;
+}
+
+#contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #cab811;
+  padding: 3rem 1rem;
+}
+#contact h1 {
+  font-size: 3rem;
+}
+#contact h1:before {
+  background-color: #101820;
+}
+#contact h1:after {
+  background-color: #101820;
+}
+#contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  font-size: 1.1rem;
+  color: rgb(70, 70, 70);
+}
+#contact ul li span {
+  display: inline-block;
+  font-weight: 500;
+  width: 100px;
+  text-align: end;
+  margin-right: 10px;
 }
 
 @keyframes appear-text-right {
@@ -229,7 +320,7 @@ header .menu-container li a {
   to {
     transform: translateX(0);
   }
-}`, "",{"version":3,"sources":["webpack://./src/styles/main.scss","webpack://./src/styles/_mixins.scss","webpack://./src/styles/_variables.scss"],"names":[],"mappings":"AAIA;EACE,UAAA;EACA,SAAA;EACA,kBAAA;EACA,oBAAA;EACA,sBAAA;EACA,mJAAA;AAFF;;AAKA;ECZE,aAAA;EACA,mBDYqB;EACrB,8BAAA;EACA,mBAAA;EACA,kBAAA;EACA,yBElBe;EFmBf,WAAA;EACA,eAAA;EACA,WAAA;EACA,WAAA;AADF;AAGE;EACE,iBAAA;EACA,kCAAA;EACA,gBAAA;EACA,eAAA;EACA,4BEzBgB;EF0BhB,kBAAA;EACA,gBAAA;AADJ;AAGE;EACE,qBAAA;AADJ;AAGE;EACE,WAAA;EACA,kBAAA;EACA,MAAA;EACA,QAAA;EACA,SAAA;EACA,UAAA;EACA,yBE1CW;EF2CX,4BExCgB;AFuCpB;AAGE;EACE,YAAA;AADJ;AAGE;EACE,WAAA;EACA,kBAAA;EACA,SAAA;EACA,OAAA;EACA,SAAA;EACA,UAAA;EACA,yBEvDW;EFwDX,4BErDgB;AFoDpB;AAGE;EACE,YAAA;AADJ;AAIE;EC9DA,aAAA;EACA,mBD8DuB;EACrB,gBAAA;EACA,SAAA;AADJ;AAGI;EACE,eAAA;EACA,kBAAA;EACA,mBAAA;AADN;AAGI;EACE,WAAA;AADN;AAGI;EACE,WAAA;EACA,kBAAA;EACA,SAAA;EACA,OAAA;EACA,QAAA;EACA,WAAA;EACA,yBElFS;EFmFT,4BEhFc;AF+EpB;AAGI;EACE,YAAA;EACA,0BAAA;AADN;;AAMA;EC5FE,aAAA;EACA,sBD4FqB;EACrB,uBAAA;EACA,mBAAA;EACA,yBE/FW;EFgGX,WAAA;EACA,YAAA;AAFF;AAIE;EACE,kCAAA;EACA,gBAAA;EACA,eAAA;EACA,oBAAA;AAFJ;AAKE;EACE,gBAAA;EACA,2CAAA;AAHJ;AAME;EACE,0CAAA;AAJJ;AAOE;EACE,iBAAA;AALJ;AAQE;EACE,yBAAA;EACA,qBAAA;EACA,cE3HW;EF4HX,kBAAA;AANJ;AAQE;EACE,WAAA;EACA,kBAAA;EACA,SAAA;EACA,OAAA;EACA,QAAA;EACA,WAAA;EACA,yBErIW;EFsIX,4BEnIgB;AF6HpB;AAQE;EACE,WAAA;AANJ;;AAUA;EACE,kBAAA;EACA,yBEhJe;EFiJf,WAAA;AAPF;AASE;EACE,iBAAA;EACA,mBAAA;EACA,mBAAA;EACA,gBAAA;AAPJ;AAUE;EACE,iBAAA;EACA,mBAAA;AARJ;AAWE;EC9JA,aAAA;EACA,mBD8JuB;EACrB,eAAA;EACA,mBAAA;EACA,SAAA;EACA,kBAAA;EACA,kBAAA;AARJ;AAUI;ECtKF,aAAA;EACA,sBDsKyB;EACrB,mBAAA;EACA,uBAAA;EACA,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,kBAAA;EACA,eAAA;EACA,4BE5Kc;AFqKpB;AASM;EACE,kBAAA;EACA,OAAA;EACA,gBAAA;AAPR;AAWI;EACE,yBAAA;AATN;AAYI;EACE,YAAA;EACA,aAAA;AAVN;;AAeA;EACE,oCAAA;EACA,kBAAA;AAZF;AAcE;EACE,iBAAA;EACA,mBAAA;EACA,gBAAA;AAZJ;;AAgBA;EACE;IACE,4BAAA;EAbF;EAgBA;IACE,wBAAA;EAdF;AACF;AAiBA;EACE;IACE,6BAAA;EAfF;EAkBA;IACE,wBAAA;EAhBF;AACF","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;800&family=Whisper&display=swap');\r\n@import 'mixins';\r\n@import 'variables';\r\n\r\n* {\r\n  padding: 0;\r\n  margin: 0;\r\n  font-size: inherit;\r\n  font-weight: inherit;\r\n  box-sizing: border-box;\r\n  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n}\r\n\r\nheader {\r\n  @include displayFlex(row);\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 1rem 4rem;\r\n  background-color: $charcoal-color;\r\n  color: #fff;\r\n  position: fixed;\r\n  width: 100%;\r\n  z-index: 10;\r\n\r\n  h1 {\r\n    font-size: 1.8rem;\r\n    font-family: 'Whisper', sans-serif;\r\n    font-weight: 700;\r\n    cursor: pointer;\r\n    transition: $transtion-primary;\r\n    position: relative;\r\n    padding: 0px 8px;\r\n  }\r\n  h1:hover {\r\n    transform: scale(1.1);\r\n  }\r\n  h1::before {\r\n    content: \"\";\r\n    position: absolute;\r\n    top: 0;\r\n    right: 0;\r\n    height: 0;\r\n    width: 1px;\r\n    background-color: $yellow-color;\r\n    transition: $transtion-primary;\r\n  }\r\n  h1:hover::before {\r\n    height: 100%;\r\n  }\r\n  h1::after {\r\n    content: \"\";\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    height: 0;\r\n    width: 1px;\r\n    background-color: $yellow-color;\r\n    transition: $transtion-primary;\r\n  }\r\n  h1:hover::after {\r\n    height: 100%;\r\n  }\r\n\r\n  .menu-container {\r\n    @include displayFlex(row);\r\n    list-style: none;\r\n    gap: 20px;\r\n\r\n    li {\r\n      cursor: pointer;\r\n      position: relative;\r\n      padding-bottom: 4px;\r\n    }\r\n    li:hover::after {\r\n      width: 100%;\r\n    }\r\n    li::after {\r\n      content: \"\";\r\n      position: absolute;\r\n      bottom: 0;\r\n      left: 0;\r\n      width: 0;\r\n      height: 1px;\r\n      background-color: $yellow-color;\r\n      transition: $transtion-primary;\r\n    }\r\n    li a {\r\n      color: white;\r\n      text-decoration-line: none;\r\n    }\r\n  }\r\n} \r\n\r\n#home {\r\n  @include displayFlex(column);\r\n  justify-content: center;\r\n  align-items: center;\r\n  background-color: $pink-color;\r\n  color: #fff;\r\n  height: 90vh;\r\n\r\n  h1 {\r\n    font-family: 'Whisper', sans-serif;\r\n    font-weight: 700;\r\n    font-size: 4rem;\r\n    padding-bottom: 2rem;\r\n  }\r\n\r\n  h2 {\r\n    font-weight: 500;\r\n    animation: 2s appear-text-right 1 alternate;\r\n  }\r\n\r\n  p {\r\n    animation: 2s appear-text-left 1 alternate;\r\n  }\r\n\r\n  h2, p {\r\n    font-size: 2.5rem;\r\n  }\r\n  \r\n  a {\r\n    text-transform: uppercase;\r\n    text-decoration: none;\r\n    color: $yellow-color;\r\n    position: relative;\r\n  }\r\n  a::after {\r\n    content: \"\";\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    width: 0;\r\n    height: 2px;\r\n    background-color: $yellow-color;\r\n    transition: $transtion-primary;\r\n  }\r\n  a:hover::after {\r\n    width: 100%;\r\n  }\r\n}\r\n\r\n#about {\r\n  padding: 3rem 4rem;\r\n  background-color: $charcoal-color;\r\n  color: #fff;\r\n\r\n  h2 {\r\n    font-size: 2.5rem;\r\n    letter-spacing: 1px;\r\n    margin-bottom: 1rem;\r\n    font-weight: 500;\r\n  }\r\n\r\n  p {\r\n    font-size: 0.9rem;\r\n    line-height: 1.5rem;\r\n  }\r\n\r\n  .skills-container {\r\n    @include displayFlex(row);\r\n    flex-wrap: wrap;\r\n    align-items: center;\r\n    gap: 20px;\r\n    margin-top: 2.5rem;\r\n    padding: 0rem 8rem;\r\n\r\n    div {\r\n      @include displayFlex(column);\r\n      align-items: center;\r\n      justify-content: center;\r\n      height: 150px;\r\n      border: 1px solid $yellow-color;\r\n      border-radius: 16px;\r\n      position: relative;\r\n      cursor: pointer;\r\n      transition: $transtion-primary;\r\n\r\n      h4 {\r\n        position: absolute;\r\n        top: 1%;\r\n        font-weight: 500;\r\n      }\r\n    }\r\n\r\n    div:hover {\r\n      background-color: #cab811;\r\n    }\r\n\r\n    .skill {\r\n      width: 100px;\r\n      padding: 1rem;\r\n    }\r\n  }\r\n}\r\n\r\n#my-work {\r\n  background-color: rgb(228, 228, 228);\r\n  padding: 3rem 4rem;\r\n\r\n  h2 {\r\n    font-size: 2.5rem;\r\n    letter-spacing: 1px;\r\n    font-weight: 500;\r\n  }\r\n}\r\n\r\n@keyframes appear-text-right {\r\n  from {\r\n    transform: translateX(100vw);\r\n  }\r\n\r\n  to {\r\n    transform: translateX(0);\r\n  }\r\n}\r\n\r\n@keyframes appear-text-left {\r\n  from {\r\n    transform: translateX(-100vw);\r\n  }\r\n\r\n  to {\r\n    transform: translateX(0);\r\n  }\r\n}","@mixin displayFlex($direction) {\r\n  display: flex;\r\n  flex-direction: $direction;\r\n}","$charcoal-color: #101820;\r\n$yellow-color: #FEE715;\r\n$pink-color: #ff889a;\r\n\r\n$transtion-primary: 0.3s ease-in-out;"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/main.scss","webpack://./src/styles/_variables.scss","webpack://./src/styles/_mixins.scss"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;800&family=Whisper&display=swap');\r\n@import 'mixins';\r\n@import 'variables';\r\n\r\n* {\r\n  padding: 0;\r\n  margin: 0;\r\n  font-size: inherit;\r\n  font-weight: inherit;\r\n  box-sizing: border-box;\r\n  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n}\r\n\r\n#logo {\r\n  font-size: 1.8rem;\r\n  font-family: 'Whisper', sans-serif;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n  transition: $transtion-primary;\r\n  position: relative;\r\n  padding: 0px 8px;\r\n}\r\n#logo:hover {\r\n  transform: scale(1.1);\r\n}\r\n#logo::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  height: 0;\r\n  width: 1px;\r\n  background-color: $yellow-color;\r\n  transition: $transtion-primary;\r\n}\r\n#logo:hover::before {\r\n  height: 100%;\r\n}\r\n#logo::after {\r\n  content: \"\";\r\n  position: absolute;\r\n  bottom: 0;\r\n  left: 0;\r\n  height: 0;\r\n  width: 1px;\r\n  background-color: $yellow-color;\r\n  transition: $transtion-primary;\r\n}\r\n#logo:hover::after {\r\n  height: 100%;\r\n}\r\n\r\nheader {\r\n  @include displayFlex(row);\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 1rem 4rem;\r\n  background-color: $charcoal-color;\r\n  color: #fff;\r\n  position: fixed;\r\n  width: 100%;\r\n  z-index: 10;\r\n\r\n  .menu-container {\r\n    @include displayFlex(row);\r\n    list-style: none;\r\n    gap: 20px;\r\n\r\n    li {\r\n      cursor: pointer;\r\n      position: relative;\r\n      padding-bottom: 4px;\r\n    }\r\n    li:hover::after {\r\n      width: 100%;\r\n    }\r\n    li::after {\r\n      content: \"\";\r\n      position: absolute;\r\n      bottom: 0;\r\n      left: 0;\r\n      width: 0;\r\n      height: 1px;\r\n      background-color: $yellow-color;\r\n      transition: $transtion-primary;\r\n    }\r\n    li a {\r\n      color: white;\r\n      text-decoration-line: none;\r\n    }\r\n  }\r\n} \r\n\r\n#home {\r\n  @include displayFlex(column);\r\n  justify-content: center;\r\n  align-items: center;\r\n  background-color: $pink-color;\r\n  color: #fff;\r\n  height: 90vh;\r\n\r\n  h1 {\r\n    font-family: 'Whisper', sans-serif;\r\n    font-weight: 700;\r\n    font-size: 4rem;\r\n    padding-bottom: 2rem;\r\n  }\r\n\r\n  h2 {\r\n    font-weight: 500;\r\n    animation: 2s appear-text-right 1 alternate;\r\n  }\r\n\r\n  p {\r\n    animation: 2s appear-text-left 1 alternate;\r\n  }\r\n\r\n  h2, p {\r\n    font-size: 2.5rem;\r\n  }\r\n  \r\n  a {\r\n    text-transform: uppercase;\r\n    text-decoration: none;\r\n    color: $yellow-color;\r\n    position: relative;\r\n  }\r\n  a::after {\r\n    content: \"\";\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    width: 0;\r\n    height: 2px;\r\n    background-color: $yellow-color;\r\n    transition: $transtion-primary;\r\n  }\r\n  a:hover::after {\r\n    width: 100%;\r\n  }\r\n}\r\n\r\n#about {\r\n  padding: 3rem 4rem;\r\n  background-color: $charcoal-color;\r\n  color: #fff;\r\n\r\n  h2 {\r\n    font-size: 2.5rem;\r\n    letter-spacing: 1px;\r\n    margin-bottom: 1rem;\r\n    font-weight: 500;\r\n  }\r\n\r\n  p {\r\n    font-size: 0.9rem;\r\n    line-height: 1.5rem;\r\n  }\r\n\r\n  .skills-container {\r\n    @include displayFlex(row);\r\n    flex-wrap: wrap;\r\n    align-items: center;\r\n    gap: 20px;\r\n    margin-top: 2.5rem;\r\n    padding: 0rem 8rem;\r\n\r\n    div {\r\n      @include displayFlex(column);\r\n      align-items: center;\r\n      justify-content: center;\r\n      height: 150px;\r\n      border: 1px solid $yellow-color;\r\n      border-radius: 16px;\r\n      position: relative;\r\n      cursor: pointer;\r\n      transition: $transtion-primary;\r\n\r\n      h4 {\r\n        position: absolute;\r\n        top: 1%;\r\n        font-weight: 500;\r\n      }\r\n    }\r\n\r\n    div:hover {\r\n      background-color: #cab811;\r\n    }\r\n\r\n    .skill {\r\n      width: 100px;\r\n      padding: 1rem;\r\n    }\r\n  }\r\n}\r\n\r\n#my-work {\r\n  background-color: rgb(228, 228, 228);\r\n  padding: 4rem 3rem 6rem 3rem;\r\n\r\n  h2 {\r\n    font-size: 2.5rem;\r\n    letter-spacing: 1px;\r\n    font-weight: 500;\r\n    margin-bottom: 5rem;\r\n  }\r\n\r\n  .projects-container {\r\n    @include displayFlex(column);\r\n    gap: 5rem;\r\n  }\r\n}\r\n\r\n.project {\r\n  @include displayFlex(row);\r\n  padding: 1rem;\r\n  border: 1px solid rgb(116, 116, 116);\r\n  border-radius: 10px;\r\n  gap: 3rem;\r\n\r\n  img {\r\n    border-radius: 16px;\r\n  }\r\n\r\n  .summary {\r\n    @include displayFlex(column);\r\n    \r\n    h4 {\r\n      font-size: 1.75rem;\r\n      font-weight: 500;\r\n      padding: 1rem 0rem;\r\n    }\r\n\r\n    p {\r\n      font-size: 0.9rem;\r\n      line-height: 1.5rem;\r\n      color: rgb(70, 70, 70);\r\n    }\r\n\r\n    .buttons {\r\n      @include displayFlex(row);\r\n      justify-content: center;\r\n      gap: 2rem;\r\n      margin-top: auto;\r\n      margin-bottom: 1rem;\r\n      \r\n      a {\r\n        color: rgb(70, 70, 70);\r\n        text-decoration: none;\r\n        padding: 0.8rem 1.8rem;\r\n        border: 1px solid rgb(70, 70, 70);\r\n        border-radius: 10px;\r\n        transition: $transtion-primary;\r\n      }\r\n      a:hover {\r\n        background-color: $charcoal-color;\r\n        color: #fff;\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n#contact {\r\n  @include displayFlex(row);\r\n  justify-content: space-evenly;\r\n  align-items: center;\r\n  background-color: #cab811;\r\n  padding: 3rem 1rem;\r\n\r\n  h1 {\r\n    font-size: 3rem;\r\n  }\r\n  h1:before {\r\n    background-color: $charcoal-color;\r\n  }\r\n  h1:after {\r\n    background-color: $charcoal-color;\r\n  }\r\n\r\n  ul {\r\n    @include displayFlex(column);\r\n    gap: 10px;\r\n    list-style: none;\r\n    font-size: 1.1rem;\r\n    color: rgb(70, 70, 70);\r\n\r\n    li span {\r\n      display: inline-block;\r\n      font-weight: 500;\r\n      width: 100px;\r\n      text-align: end;\r\n      margin-right: 10px;\r\n    }\r\n  }\r\n}\r\n\r\n@keyframes appear-text-right {\r\n  from {\r\n    transform: translateX(100vw);\r\n  }\r\n\r\n  to {\r\n    transform: translateX(0);\r\n  }\r\n}\r\n\r\n@keyframes appear-text-left {\r\n  from {\r\n    transform: translateX(-100vw);\r\n  }\r\n\r\n  to {\r\n    transform: translateX(0);\r\n  }\r\n}","$charcoal-color: #101820;\r\n$yellow-color: #FEE715;\r\n$pink-color: #ff889a;\r\n\r\n$transtion-primary: 0.3s ease-in-out;","@mixin displayFlex($direction) {\r\n  display: flex;\r\n  flex-direction: $direction;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -676,6 +767,36 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/assets/J.W.png":
+/*!****************************!*\
+  !*** ./src/assets/J.W.png ***!
+  \****************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "J.W.png";
+
+/***/ }),
+
+/***/ "./src/assets/ageCalulator.PNG":
+/*!*************************************!*\
+  !*** ./src/assets/ageCalulator.PNG ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "ageCalulator.PNG";
+
+/***/ }),
+
+/***/ "./src/assets/battleship.PNG":
+/*!***********************************!*\
+  !*** ./src/assets/battleship.PNG ***!
+  \***********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "battleship.PNG";
+
+/***/ }),
+
 /***/ "./src/assets/css.png":
 /*!****************************!*\
   !*** ./src/assets/css.png ***!
@@ -783,6 +904,16 @@ module.exports = __webpack_require__.p + "sass.png";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "tailwind.png";
+
+/***/ }),
+
+/***/ "./src/assets/weather.PNG":
+/*!********************************!*\
+  !*** ./src/assets/weather.PNG ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "weather.PNG";
 
 /***/ })
 
@@ -913,6 +1044,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_python_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./assets/python.png */ "./src/assets/python.png");
 /* harmony import */ var _assets_sass_png__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./assets/sass.png */ "./src/assets/sass.png");
 /* harmony import */ var _assets_django_png__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./assets/django.png */ "./src/assets/django.png");
+/* harmony import */ var _assets_battleship_PNG__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./assets/battleship.PNG */ "./src/assets/battleship.PNG");
+/* harmony import */ var _assets_weather_PNG__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./assets/weather.PNG */ "./src/assets/weather.PNG");
+/* harmony import */ var _assets_ageCalulator_PNG__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./assets/ageCalulator.PNG */ "./src/assets/ageCalulator.PNG");
+/* harmony import */ var _assets_J_W_png__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./assets/J.W.png */ "./src/assets/J.W.png");
+
+
+
+
 
 
 
@@ -929,4 +1068,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlefa81fa7ca6960bc80981.js.map
+//# sourceMappingURL=bundle034c99be4f17ca200428.js.map
