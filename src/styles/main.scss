@@ -50,6 +50,12 @@
   height: 100%;
 }
 
+#hamburger-menu {
+  width: 35px;
+  color: #fff;
+  display: none;
+}
+
 header {
   @include displayFlex(row);
   justify-content: space-between;
@@ -243,6 +249,7 @@ header {
       gap: 2rem;
       margin-top: auto;
       margin-bottom: 1rem;
+      padding-top: 1rem;
       
       a {
         color: rgb(70, 70, 70);
@@ -311,5 +318,93 @@ header {
 
   to {
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 930px) {
+  .project {
+    @include displayFlex(column);
+
+    img {
+      width: 100%;
+      @include displayFlex(row);
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  #about .skills-container {
+    padding: 0rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #about {
+    padding: 3rem 1rem;
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  #my-work {
+    padding: 3rem 0rem 5rem 0rem;
+
+    h2 {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .project {
+    border: none;
+    border-bottom: 1px solid rgb(116, 116, 116);
+    border-radius: 0;
+    padding-bottom: 2rem;
+  }
+
+  #contact {
+    @include displayFlex(column);
+    padding: 3rem 0rem;
+
+    #logo {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .project .summary {
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    .buttons a {
+      font-size: 1.1rem;
+    }
+  }
+
+  header {
+    display: inline;
+    padding: 1rem;
+  }
+
+  header .menu-container {
+    display: none;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  #logo {
+    display: inline-block;
+  }
+
+  #hamburger-menu {
+    display: inline;
+    cursor: pointer;
+    float: right;
+  }
+
+  #home h2,
+  #home p {
+    text-align: center;
   }
 }
